@@ -1,0 +1,50 @@
+Cignaler connects your browser to the Cignaler desktop app, letting you add GitLab pipeline watchers with a single click.
+
+🔧 HOW IT WORKS
+
+1. Browse any GitLab project page
+2. Click the Cignaler icon in your toolbar
+3. The extension detects the project name and current branch
+4. Click "Add Watcher" to send it to your Cignaler desktop app
+5. Cignaler starts monitoring that pipeline — you'll get notified when it finishes
+
+No copy-pasting project paths. No switching windows. One click.
+
+✅ FEATURES
+
+• Automatic detection of GitLab project paths and branches/tags
+• Works on project pages, pipelines, merge requests, commits, and more
+• Supports self-hosted GitLab instances (add your custom hostname in settings)
+• Customizable watcher names before adding
+• Manual branch/tag entry when the extension can't detect one from the URL
+
+⚙️ REQUIREMENTS
+
+• The Cignaler desktop app must be installed on your computer
+• The native messaging host must be registered (the Cignaler installer handles this)
+• A CI server must be configured in Cignaler — set the matching server name in the extension's options
+
+🔒 PRIVACY
+
+• All communication stays local — the extension talks only to the Cignaler desktop app on your computer via Chrome's Native Messaging
+• No data is sent to any external server
+• No analytics, tracking, or telemetry
+• Settings (CI server name, custom hostnames) are stored locally in Chrome
+
+🛡️ PERMISSIONS
+
+• activeTab — reads the current tab to detect GitLab project info when you click the icon
+• storage — saves your settings (CI server name, custom GitLab hostnames) locally
+• nativeMessaging — communicates with the Cignaler desktop app on your machine
+• Host permissions (optional) — only requested for self-hosted GitLab domains you add
+
+📋 REVIEW / TESTING INSTRUCTIONS
+
+To test this extension, you need the Cignaler desktop application installed with its native messaging host registered. Without it, the extension will show a connection error when attempting to add a watcher.
+
+Basic functionality can be verified without the desktop app:
+1. Install the extension
+2. Navigate to any project on gitlab.com (e.g. https://gitlab.com/gitlab-org/gitlab)
+3. Click the extension icon — it should detect the project path and branch
+4. Open the extension options — verify you can set a CI server name and add custom hostnames
+5. Navigate to a non-GitLab page — the popup should show "Not a GitLab page"

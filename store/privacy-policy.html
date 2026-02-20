@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Cignaler Chrome Extension</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: #1a1a1a;
+      background: #f8f9fa;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 3rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    h1 {
+      font-size: 1.75rem;
+      margin-bottom: 0.25rem;
+      color: #111;
+    }
+    .subtitle {
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #eee;
+    }
+    h2 {
+      font-size: 1.15rem;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+      color: #222;
+    }
+    p, li {
+      font-size: 0.95rem;
+      color: #333;
+    }
+    p { margin-bottom: 1rem; }
+    ul {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+    li { margin-bottom: 0.4rem; }
+    code {
+      background: #f0f0f0;
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-size: 0.88em;
+    }
+    .highlight {
+      background: #e8f5e9;
+      border-left: 3px solid #4caf50;
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+    }
+    .highlight p { margin-bottom: 0; }
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #eee;
+      font-size: 0.85rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">Cignaler — GitLab Pipeline Watcher (Chrome Extension)</p>
+
+    <div class="highlight">
+      <p><strong>Summary:</strong> This extension does not collect, transmit, or store any personal data. All communication happens locally between your browser and the Cignaler desktop app installed on your computer.</p>
+    </div>
+
+    <h2>What This Extension Does</h2>
+    <p>Cignaler detects when you are browsing a GitLab project and lets you add a pipeline watcher to your locally installed Cignaler desktop application with one click. It reads the current page URL to extract the project path and branch name, then sends that information to the desktop app.</p>
+
+    <h2>Data Collection</h2>
+    <p>This extension does <strong>not</strong> collect any personal data. Specifically:</p>
+    <ul>
+      <li>No analytics or telemetry of any kind</li>
+      <li>No cookies, tracking pixels, or fingerprinting</li>
+      <li>No browsing history is recorded or transmitted</li>
+      <li>No user accounts or authentication</li>
+      <li>No data is sent to any external server</li>
+    </ul>
+
+    <h2>Data Storage</h2>
+    <p>The extension stores a small amount of configuration using Chrome's built-in <code>chrome.storage.sync</code> API:</p>
+    <ul>
+      <li><strong>CI server name</strong> — the name of your CI server as configured in the Cignaler desktop app</li>
+      <li><strong>Custom GitLab hostnames</strong> — any self-hosted GitLab URLs you add so the extension can recognize them</li>
+    </ul>
+    <p>This data is stored locally in your browser profile (and synced across your Chrome instances if you are signed in to Chrome). It is never sent to any third party.</p>
+
+    <h2>Network Communication</h2>
+    <p>The extension communicates <strong>only</strong> with the Cignaler desktop application installed on your computer, using Chrome's <a href="https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging" target="_blank" rel="noopener">Native Messaging</a> protocol. This is a local IPC mechanism — no network requests are made.</p>
+    <p>The extension reads the content of GitLab pages you visit (to extract the project path and branch/tag), but this information is only used locally and is never transmitted over the network.</p>
+
+    <h2>Permissions Explained</h2>
+    <ul>
+      <li><strong>activeTab</strong> — allows the extension to read the current tab's URL and page content when you click the extension icon, so it can detect GitLab project information</li>
+      <li><strong>storage</strong> — allows saving your settings (CI server name, custom hostnames) locally in Chrome</li>
+      <li><strong>nativeMessaging</strong> — allows communication with the Cignaler desktop app on your computer</li>
+      <li><strong>Host permissions (optional)</strong> — requested only for self-hosted GitLab instances you configure, so the extension can detect projects on those domains</li>
+    </ul>
+
+    <h2>Third-Party Services</h2>
+    <p>This extension does not use any third-party services, SDKs, libraries, or APIs. It has no external dependencies.</p>
+
+    <h2>Changes to This Policy</h2>
+    <p>If this privacy policy is updated, the changes will be reflected on this page. The extension's core design principle — all data stays local — will not change.</p>
+
+    <footer>
+      Last updated: February 2026
+    </footer>
+  </div>
+</body>
+</html>

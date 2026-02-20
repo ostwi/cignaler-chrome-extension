@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=320">
+  <link rel="stylesheet" href="popup.css">
+  <title>Cignaler</title>
+</head>
+<body>
+  <div id="app">
+    <!-- Loading state -->
+    <div id="state-loading" class="state">
+      <div class="header">
+        <img src="../icons/icon48.png" alt="" class="header-icon"><h1>Cignaler</h1>
+      </div>
+      <div class="content">
+        <p class="muted">Detecting GitLab project...</p>
+      </div>
+    </div>
+
+    <!-- Detected state -->
+    <div id="state-detected" class="state hidden">
+      <div class="header">
+        <img src="../icons/icon48.png" alt="" class="header-icon"><h1>Cignaler</h1>
+        <span class="badge">GitLab detected</span>
+      </div>
+      <div class="content">
+        <div class="field">
+          <label>Project</label>
+          <span id="project-path" class="value"></span>
+        </div>
+        <div class="field">
+          <label>Ref (branch/tag)</label>
+          <span id="ref-name" class="value"></span>
+        </div>
+        <div class="field">
+          <label>CI Server</label>
+          <span id="ci-server-name" class="value"></span>
+        </div>
+        <div class="field">
+          <label for="watcher-name">Watcher Name</label>
+          <input type="text" id="watcher-name" placeholder="e.g. my-project main">
+        </div>
+        <button id="btn-add-watcher" class="btn-primary">Add Watcher</button>
+        <p id="status-message" class="status-message hidden"></p>
+      </div>
+    </div>
+
+    <!-- No ref state -->
+    <div id="state-no-ref" class="state hidden">
+      <div class="header">
+        <img src="../icons/icon48.png" alt="" class="header-icon"><h1>Cignaler</h1>
+        <span class="badge">GitLab detected</span>
+      </div>
+      <div class="content">
+        <div class="field">
+          <label>Project</label>
+          <span id="no-ref-project-path" class="value"></span>
+        </div>
+        <p class="muted">Could not detect a branch or tag on this page.</p>
+        <div class="field">
+          <label for="manual-ref">Enter ref manually</label>
+          <input type="text" id="manual-ref" placeholder="e.g. main">
+        </div>
+        <div class="field">
+          <label>CI Server</label>
+          <span id="no-ref-ci-server-name" class="value"></span>
+        </div>
+        <div class="field">
+          <label for="no-ref-watcher-name">Watcher Name</label>
+          <input type="text" id="no-ref-watcher-name" placeholder="e.g. my-project main">
+        </div>
+        <button id="btn-add-watcher-manual" class="btn-primary">Add Watcher</button>
+        <p id="no-ref-status-message" class="status-message hidden"></p>
+      </div>
+    </div>
+
+    <!-- Not GitLab state -->
+    <div id="state-not-gitlab" class="state hidden">
+      <div class="header">
+        <img src="../icons/icon48.png" alt="" class="header-icon"><h1>Cignaler</h1>
+      </div>
+      <div class="content">
+        <p class="muted">This page does not appear to be a GitLab project.</p>
+        <p class="muted small">Navigate to a GitLab project page to detect a pipeline.</p>
+      </div>
+    </div>
+
+    <!-- No config state -->
+    <div id="state-no-config" class="state hidden">
+      <div class="header">
+        <img src="../icons/icon48.png" alt="" class="header-icon"><h1>Cignaler</h1>
+      </div>
+      <div class="content">
+        <p class="muted">CI server name is not configured.</p>
+        <button id="btn-open-options" class="btn-secondary">Open Settings</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

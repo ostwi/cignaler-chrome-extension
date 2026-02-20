@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="options.css">
+  <title>Cignaler Settings</title>
+</head>
+<body>
+  <div id="app">
+    <h1><img src="../icons/icon48.png" alt="" class="header-icon">Cignaler Settings</h1>
+
+    <section>
+      <h2>CI Server</h2>
+      <p class="description">
+        Enter the name of the CI server configured in the Cignaler desktop app.
+        This must match exactly.
+      </p>
+      <div class="field">
+        <label for="ci-server-name">CI Server Name</label>
+        <input type="text" id="ci-server-name" placeholder="e.g. my-gitlab">
+      </div>
+    </section>
+
+    <section>
+      <h2>Custom GitLab Hostnames</h2>
+      <p class="description">
+        If you use a self-hosted GitLab instance with a custom domain,
+        add each hostname on a new line. The extension will also run on these domains.
+      </p>
+      <div class="field">
+        <label for="custom-hosts">Additional Hostnames</label>
+        <textarea id="custom-hosts" rows="4" placeholder="gitlab.mycompany.com&#10;git.example.org"></textarea>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="btn-save" class="btn-primary">Save Settings</button>
+      <span id="save-status" class="save-status hidden"></span>
+    </div>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
