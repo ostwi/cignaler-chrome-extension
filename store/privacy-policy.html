@@ -75,14 +75,14 @@
 <body>
   <div class="container">
     <h1>Privacy Policy</h1>
-    <p class="subtitle">Cignaler — GitLab Pipeline Watcher (Chrome Extension)</p>
+    <p class="subtitle">Cignaler — CI Pipeline Watcher (Chrome Extension)</p>
 
     <div class="highlight">
       <p><strong>Summary:</strong> This extension does not collect, transmit, or store any personal data. All communication happens locally between your browser and the Cignaler desktop app installed on your computer.</p>
     </div>
 
     <h2>What This Extension Does</h2>
-    <p>Cignaler detects when you are browsing a GitLab project and lets you add a pipeline watcher to your locally installed Cignaler desktop application with one click. It reads the current page URL to extract the project path and branch name, then sends that information to the desktop app.</p>
+    <p>Cignaler detects when you are browsing a CI platform project page (currently GitLab, with GitHub and Jenkins coming soon) and lets you add a pipeline watcher to your locally installed Cignaler desktop application with one click. It reads the current page URL to extract the project path and branch name, then sends that information to the desktop app.</p>
 
     <h2>Data Collection</h2>
     <p>This extension does <strong>not</strong> collect any personal data. Specifically:</p>
@@ -98,20 +98,20 @@
     <p>The extension stores a small amount of configuration using Chrome's built-in <code>chrome.storage.sync</code> API:</p>
     <ul>
       <li><strong>CI server name</strong> — the name of your CI server as configured in the Cignaler desktop app</li>
-      <li><strong>Custom GitLab hostnames</strong> — any self-hosted GitLab URLs you add so the extension can recognize them</li>
+      <li><strong>Custom hostnames</strong> — any self-hosted CI platform URLs you add so the extension can recognize them</li>
     </ul>
     <p>This data is stored locally in your browser profile (and synced across your Chrome instances if you are signed in to Chrome). It is never sent to any third party.</p>
 
     <h2>Network Communication</h2>
     <p>The extension communicates <strong>only</strong> with the Cignaler desktop application installed on your computer, using Chrome's <a href="https://developer.chrome.com/docs/extensions/develop/concepts/native-messaging" target="_blank" rel="noopener">Native Messaging</a> protocol. This is a local IPC mechanism — no network requests are made.</p>
-    <p>The extension reads the content of GitLab pages you visit (to extract the project path and branch/tag), but this information is only used locally and is never transmitted over the network.</p>
+    <p>The extension reads the content of CI platform pages you visit (to extract the project path and branch/tag), but this information is only used locally and is never transmitted over the network.</p>
 
     <h2>Permissions Explained</h2>
     <ul>
-      <li><strong>activeTab</strong> — allows the extension to read the current tab's URL and page content when you click the extension icon, so it can detect GitLab project information</li>
+      <li><strong>activeTab</strong> — allows the extension to read the current tab's URL and page content when you click the extension icon, so it can detect CI project information</li>
       <li><strong>storage</strong> — allows saving your settings (CI server name, custom hostnames) locally in Chrome</li>
       <li><strong>nativeMessaging</strong> — allows communication with the Cignaler desktop app on your computer</li>
-      <li><strong>Host permissions (optional)</strong> — requested only for self-hosted GitLab instances you configure, so the extension can detect projects on those domains</li>
+      <li><strong>Host permissions (optional)</strong> — requested only for self-hosted CI platform instances you configure, so the extension can detect projects on those domains</li>
     </ul>
 
     <h2>Third-Party Services</h2>

@@ -1,4 +1,4 @@
-Cignaler connects your browser to the Cignaler desktop app, letting you add GitLab pipeline watchers with a single click.
+Cignaler connects your browser to the Cignaler desktop app, letting you add CI/CD pipeline watchers with a single click. Currently supports GitLab, with GitHub Actions and Jenkins coming soon.
 
 🔧 HOW IT WORKS
 
@@ -12,9 +12,10 @@ No copy-pasting project paths. No switching windows. One click.
 
 ✅ FEATURES
 
-• Automatic detection of GitLab project paths and branches/tags
+• Automatic detection of project paths and branches/tags
 • Works on project pages, pipelines, merge requests, commits, and more
 • Supports self-hosted GitLab instances (add your custom hostname in settings)
+• GitHub Actions and Jenkins support coming soon
 • Customizable watcher names before adding
 • Manual branch/tag entry when the extension can't detect one from the URL
 
@@ -33,18 +34,7 @@ No copy-pasting project paths. No switching windows. One click.
 
 🛡️ PERMISSIONS
 
-• activeTab — reads the current tab to detect GitLab project info when you click the icon
-• storage — saves your settings (CI server name, custom GitLab hostnames) locally
+• activeTab — reads the current tab to detect project info when you click the icon
+• storage — saves your settings (CI server name, custom hostnames) locally
 • nativeMessaging — communicates with the Cignaler desktop app on your machine
-• Host permissions (optional) — only requested for self-hosted GitLab domains you add
-
-📋 REVIEW / TESTING INSTRUCTIONS
-
-To test this extension, you need the Cignaler desktop application installed with its native messaging host registered. Without it, the extension will show a connection error when attempting to add a watcher.
-
-Basic functionality can be verified without the desktop app:
-1. Install the extension
-2. Navigate to any project on gitlab.com (e.g. https://gitlab.com/gitlab-org/gitlab)
-3. Click the extension icon — it should detect the project path and branch
-4. Open the extension options — verify you can set a CI server name and add custom hostnames
-5. Navigate to a non-GitLab page — the popup should show "Not a GitLab page"
+• Host permissions (optional) — only requested for self-hosted CI platform domains you add

@@ -1,0 +1,10 @@
+Test without the Cignaler desktop app:
+
+1. Install the extension
+2. Go to any gitlab.com project (e.g. gitlab.com/gitlab-org/gitlab)
+3. Click the extension icon — it prompts to configure a CI server
+4. Open settings, enter any name (e.g. "test")
+5. Return to the GitLab page, refresh, click the icon — it detects the project and branch
+6. On a non-GitLab page the popup shows "Not a GitLab page"
+
+"Add Watcher" requires the desktop app — a connection error without it is expected.

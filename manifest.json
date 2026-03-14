@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Cignaler - GitLab Pipeline Watcher",
+  "name": "Cignaler - CI Pipeline Watcher",
   "version": "1.0.0",
-  "description": "Detect GitLab projects and add pipeline watchers to Cignaler with one click.",
+  "description": "Detect CI projects and add pipeline watchers to Cignaler with one click.",
   "permissions": [
     "activeTab",
     "storage",
